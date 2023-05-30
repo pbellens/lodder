@@ -158,10 +158,10 @@ pub fn run_app<B: Backend>(
         let mut qit = parse::line::QuickIt::new(path, blafils);
         loop {
             if let Ok(cmd) = crx.recv() {
-                let snapshot = qit.v.snapshot();
                 match cmd {
                     ParseCommand::Parse(mut l) => {
                         while l > 0 {
+                            let snapshot = qit.v.snapshot();
                             let mut parsed: Vec<message::Overview> = vec![];
                             let mut b = 100;
                             while let Some(chunk) = qit.next() {
