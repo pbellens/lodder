@@ -25,7 +25,7 @@ pub(crate) fn draw<B>(
         .collect::<Vec<_>>();
     let slay = Layout::default()
         .direction(Direction::Horizontal)
-        .constraints(constraints.as_ref())
+        //.constraints(constraints.as_ref())
         .margin(0)
         .split(area);
 
